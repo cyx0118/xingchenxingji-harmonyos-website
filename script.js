@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const themeToggle = document.getElementById("themeToggle");
-    const downloadBtn = document.getElementById("downloadBtn");
+    const wechatBtn = document.getElementById("wechatBtn");
+    const wechatWrapper = document.getElementById("wechatWrapper");
+    const qrcodePopup = document.getElementById("qrcodePopup");
     const html = document.documentElement;
     
     function getInitialTheme() {
@@ -50,6 +52,31 @@ document.addEventListener("DOMContentLoaded", function() {
         const newTheme = currentTheme === "dark" ? "light" : "dark";
         setTheme(newTheme);
     });
+    
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    
+    if (isTouchDevice) {
+        wechatBtn.addEventListener("click", function(e) {
+            e.stopPropagation();
+            qrcodePopup.classList.toggle("show");
+            wechatBtn.classList.toggle("active");
+        });
+        
+        document.addEventListener("click", function(e) {
+            if (!wechatWrapper.contains(e.target)) {
+                qrcodePopup.classList.remove("show");
+                wechatBtn.classList.remove("active");
+            }
+        });
+    } else {
+        wechatWrapper.addEventListener("mouseenter", function() {
+            qrcodePopup.classList.add("show");
+        });
+        
+        wechatWrapper.addEventListener("mouseleave", function() {
+            qrcodePopup.classList.remove("show");
+        });
+    }
 
     const observerOptions = {
         threshold: 0.1,
