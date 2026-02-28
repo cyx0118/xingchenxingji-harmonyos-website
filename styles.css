@@ -23,6 +23,8 @@
     --border-color: rgba(0, 0, 0, 0.05);
     --divider-gradient-start: #6366f1;
     --divider-gradient-end: #8b5cf6;
+    --wechat-color: #07c160;
+    --wechat-hover: #06ad56;
 }
 
 [data-theme="dark"] {
@@ -248,9 +250,10 @@ body {
     transition: color 0.3s ease;
 }
 
-.download-wrapper {
-    position: relative;
-    display: inline-block;
+.action-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     margin-top: 16px;
 }
 
@@ -272,6 +275,11 @@ body {
     text-decoration: none;
 }
 
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
 .btn-icon {
     width: 20px;
     height: 20px;
@@ -285,20 +293,54 @@ body {
     height: 100%;
 }
 
+.wechat-wrapper {
+    position: relative;
+}
+
+.wechat-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    border: none;
+    background: var(--wechat-color);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(7, 193, 96, 0.3);
+}
+
+.wechat-btn:hover {
+    background: var(--wechat-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(7, 193, 96, 0.4);
+}
+
+.wechat-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+.wechat-btn.active {
+    background: var(--wechat-hover);
+}
+
 .qrcode-popup {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 12px);
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translateX(-50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 100;
 }
 
-.download-wrapper:hover .qrcode-popup {
+.qrcode-popup.show {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateX(-50%) scale(1);
     pointer-events: auto;
 }
 
@@ -310,6 +352,21 @@ body {
     text-align: center;
     min-width: 180px;
     transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.qrcode-content::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--surface-color);
+    transition: border-bottom-color 0.3s ease;
 }
 
 .qrcode-placeholder {
@@ -423,70 +480,6 @@ body {
     transition: color 0.3s ease;
 }
 
-.features-section {
-    padding: 100px 0;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.feature-card {
-    background: var(--card-bg);
-    border-radius: 20px;
-    padding: 32px 24px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.feature-card.visible {
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-}
-
-.feature-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 20px;
-    color: var(--primary-color);
-    background: var(--primary-light);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.feature-icon svg {
-    width: 28px;
-    height: 28px;
-}
-
-.feature-card h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.feature-card p {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    transition: color 0.3s ease;
-}
-
 .footer {
     background: var(--surface-color);
     border-top: 1px solid var(--border-color);
@@ -552,10 +545,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .showcase-grid {
         gap: 30px;
     }
@@ -640,6 +629,25 @@ body {
         font-size: 1rem;
     }
 
+    .action-group {
+        gap: 12px;
+    }
+
+    .download-btn {
+        padding: 14px 28px;
+        font-size: 0.9375rem;
+    }
+
+    .wechat-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .wechat-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
     .section-title {
         font-size: 2rem;
         margin-bottom: 40px;
@@ -653,10 +661,6 @@ body {
     .showcase-image img {
         width: 220px;
         border-radius: 28px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
     }
 
     .footer-content {
@@ -679,11 +683,6 @@ body {
 @media (max-width: 380px) {
     .brand-name {
         font-size: 2rem;
-    }
-
-    .download-btn {
-        padding: 14px 28px;
-        font-size: 0.9375rem;
     }
 
     .phone-mockup {
