@@ -46,7 +46,7 @@
                         <p class="description">
                             "星辰的轨迹，生活的印记" ✨<br>我们将浩瀚星空的秩序美学，融入日常时间管理，助你在纷繁生活中，找到属于自己的节奏。
                         </p>
-                        <div class="download-wrapper">
+                        <div class="action-group">
                             <a href="https://appgallery.huawei.com/link/invite-test-wap?taskId=05112344ef4d452d220a575f86480f26&invitationCode=4wr5ZuUMdOP" target="_blank" class="download-btn" id="downloadBtn">
                                 <span class="btn-text">立即下载</span>
                                 <span class="btn-icon">
@@ -57,12 +57,19 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="qrcode-popup" id="qrcodePopup">
-                                <div class="qrcode-content">
-                                    <div class="qrcode-placeholder">
-                                        <img src="./images/qrcode.png" width="150" height="150">
+                            <div class="wechat-wrapper" id="wechatWrapper">
+                                <button class="wechat-btn" id="wechatBtn" aria-label="微信扫码">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
+                                    </svg>
+                                </button>
+                                <div class="qrcode-popup" id="qrcodePopup">
+                                    <div class="qrcode-content">
+                                        <div class="qrcode-placeholder">
+                                            <img src="./images/qrcode.png" width="150" height="150">
+                                        </div>
+                                        <p class="qrcode-tip">扫码加入内测</p>
                                     </div>
-                                    <p class="qrcode-tip">扫码加入内测</p>
                                 </div>
                             </div>
                         </div>
@@ -106,58 +113,6 @@
                     </div>
                 </div>
             </section>
-<!--    
-            <section class="features-section">
-                <h2 class="section-title">核心特性</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                                <circle cx="12" cy="13" r="4"></circle>
-                            </svg>
-                        </div>
-                        <h3>特性</h3>
-                        <p>特性</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                <line x1="12" y1="19" x2="12" y2="23"></line>
-                                <line x1="8" y1="23" x2="16" y2="23"></line>
-                            </svg>
-                        </div>
-                        <h3>特性</h3>
-                        <p>特性</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3>特性</h3>
-                        <p>特性</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                        </div>
-                        <h3>特性</h3>
-                        <p>特性</p>
-                    </div>
-                </div>
-            </section>
--->
         </div>
     </main>
 
