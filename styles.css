@@ -342,6 +342,7 @@ body {
     opacity: 1;
     transform: translateX(-50%) scale(1);
     pointer-events: auto;
+    z-index: 100;
 }
 
 .qrcode-content {
@@ -398,6 +399,7 @@ body {
 }
 
 .phone-mockup {
+    z-index: 90;
     max-width: 100%;
     height: auto;
     border-radius: 40px;
@@ -563,6 +565,8 @@ body {
 
     .text-section {
         align-items: center;
+        z-index: 10;
+        position: relative;
     }
 
     .description {
