@@ -501,7 +501,6 @@ body {
 }
 
 .footer-brand {
-    display: flex;
     align-items: center;
     gap: 10px;
 }
@@ -511,10 +510,22 @@ body {
     font-weight: 600;
     color: var(--text-primary);
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
+
+.copyright-text{
+    display: flex; 
+}
+
+.middle{
+    text-align: center;
+    justify-content: center;
+}
+
 
 .copyright {
     font-size: 0.875rem;
+     justify-content: center;
     color: var(--text-secondary);
     transition: color 0.3s ease;
 }
@@ -681,6 +692,7 @@ body {
         width: 36px;
         height: 36px;
         border-radius: 10px;
+        white-space: nowrap;
     }
 }
 
@@ -697,131 +709,15 @@ body {
         width: 200px;
     }
 }
-/* ========== 导航链接 ========== */
-.nav-links {
-    display: flex;
-    gap: 24px;
-}
 
-.nav-link {
-    text-decoration: none;
+.beian {
+    font-size: 12px;
     color: var(--text-secondary);
-    font-weight: 500;
-    transition: color 0.2s ease;
-    white-space: nowrap;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    color: var(--primary-color);
-}
-
-/* ========== 汉堡菜单 ========== */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
+    margin-top: 4px;
     justify-content: center;
-    border: 1px solid var(--border-color);
-    background: var(--surface-color);
+    opacity: 0.8;
 }
 
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: var(--surface-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 16px 0;
-    z-index: 999;
-}
-
-.mobile-menu a {
-    display: block;
-    padding: 14px 40px;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2 ease;
-}
-
-.mobile-menu a:hover {
-    background: var(--bg-color);
-}
-
-/* ========== 更新日志 ========== */
-.changelog-section {
-    padding: 100px 0;
-}
-
-.changelog-list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.changelog-item {
-    background: var(--card-bg);
-    border-radius: 20px;
-    padding: 32px;
-    box-shadow: var(--shadow);
-    transition: box-shadow 0.3 ease;
-}
-
-.changelog-item:hover {
-    box-shadow: var(--shadow-hover);
-}
-
-.changelog-version {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-}
-
-.changelog-entries {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.changelog-entries li {
-    position: relative;
-    padding-left: 20px;
+[data-theme="dark"] .beian {
     color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.changelog-entries li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.25rem;
-    line-height: 1.6;
-}
-
-/* ========== 响应式 ========== */
-@media (max-width: 968px) {
-    .nav-links,
-    .theme-toggle {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
 }
